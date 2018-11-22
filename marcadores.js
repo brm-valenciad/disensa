@@ -43,7 +43,7 @@
 					break;
 				}
 			}
-		dataLayer.push({'Categoria': category, 'acción': action,  'label': "__", 'event': action});
+		dataLayer.push({'Categoria': category, 'acción': action,  'label': $(this).val(), 'event': action});
 	});	
 	//Boton para enviar formulario
 	$("body").on("submit","#contact-form .btn-primary", function(){
@@ -67,7 +67,8 @@
 				event_ = "enviar-form-videollamada"
 			break;
 		}
-		dataLayer.push({'Categoria': category, 'acción': action,  'label': '__', 'event': event_});
+		console.warn($(this).val());
+		dataLayer.push({'Categoria': category, 'acción': action,  'label': $(this).val(), 'event': event_});
 	});
 
 	$("body").on("submit","#FormVideoLLamada .btn-primary", function(){
@@ -93,7 +94,8 @@
 				break;
 			}	
 		}
-		dataLayer.push({'Categoria': category, 'acción': action,  'label': '__', 'event': event_});
+		console.error($(this).val());
+		dataLayer.push({'Categoria': category, 'acción': action,  'label': $(this).val(), 'event': event_});
 	});
 	$("body").on("click", "#item-articulo button.btn-success.btn-block", function(){
 		dataLayer.push({'Categoria': 'tiendas', 'acción': 'select-ciudad',  'label': '__', 'event': 'select-ciudad-tiendas'});
