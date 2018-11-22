@@ -64,7 +64,7 @@
 
 			case "producto":
 				action = "select-necesidad";
-				event_ = "enviar-form-videollamada"
+				event_ = "select necesidad"
 			break;
 		}
 		console.warn($(this).val());
@@ -94,7 +94,7 @@
 				break;
 			}	
 		}
-		console.error($(this).val());
+		//console.error($(this).val());
 		dataLayer.push({'Categoria': category, 'acción': action,  'label': $(this).val(), 'event': event_});
 	});
 	$("body").on("click", "#item-articulo button.btn-success.btn-block", function(){
